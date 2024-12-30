@@ -1,24 +1,20 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Image } from "react-native";
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerBackgroundColor={{ light: "#D0D0D0", dark: "#353636" }}
       headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
+        <Image
+          source={require("@/assets/images/rnhelsinki.jpeg")}
+          style={styles.reactLogo}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">About</ThemedText>
       </ThemedView>
@@ -98,13 +94,20 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
+    color: "#808080",
     bottom: -90,
     left: -35,
-    position: 'absolute',
+    position: "absolute",
   },
   titleContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 8,
+  },
+  reactLogo: {
+    height: 250,
+    width: 250,
+    bottom: 0,
+    left: 0,
+    borderRadius: 16,
   },
 });
